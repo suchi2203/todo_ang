@@ -1,6 +1,6 @@
 const express= require("express");
 const bodyParser=require("body-parser");
-const date= require(__dirname + '/date.js');
+// const date= require(__dirname + '/date.js');
 const app= express();
 app.set('view engine',"ejs");
 app.use(bodyParser.urlencoded({extended: true})); 
@@ -11,8 +11,16 @@ var workList=[];
 
 app.get("/",function(req,res){
 
-    let dd = date.t_date();
-    res.render("list",{listTitle: dd, itemslist:items});
+    //let dd = date.t_date();
+    var today = new Date();
+    var options={
+        weekday:"long",
+        day:"numeric",
+        month:"long"
+    };
+    let todayDate_ = today.toLocaleDateString("en-US",options);
+    //return todayDate_;
+    res.render("list",{listTitle: todayDate_, itemslist:items});
 
     //res.render("list",{dayofWeek: day});
 });
