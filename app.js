@@ -30,11 +30,11 @@ app.post("/",function(req,res){
     let item=req.body.newItem;
 
     if(req.body.button == "work"){
-    //workList.push(item);
+    workList.push(item);
     res.redirect('/work');
     }
     else{
-    //items.push(item);
+    items.push(item);
     res.redirect("/");
     }
 });
