@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname+"/public"));
 
 var items=["Be Happy"];
-var workList=[];
+var workList=["good"];
 
 app.get("/",function(req,res){
 
@@ -30,11 +30,11 @@ app.post("/",function(req,res){
     let item=req.body.newItem;
 
     if(req.body.button == "work"){
-    workList.push(item);
+    //workList.push(item);
     res.redirect('/work');
     }
     else{
-    items.push(item);
+    //items.push(item);
     res.redirect("/");
     }
 });
