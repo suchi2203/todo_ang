@@ -47,6 +47,12 @@ app.get("/about",function(req,res){
     res.render("about");
 });
 
+app.get("/allNew",function(req,res){
+items=[];
+res.redirect("/");
+});
+
+
 app.listen(process.env.PORT||3000,function(){
     console.log("server running on port 3000");
 });
