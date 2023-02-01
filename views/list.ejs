@@ -10,9 +10,13 @@
             </div>
        <% } %>
 
-       <form class="item" action="/" method="post">
+      <form class="item" action="/" method="post">
         <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-        <button type="submit" name="button" value=<%= listTitle %>>+</button>
+        <button type="submit" class="button_1" name="button" value=<%= listTitle %>>+</button>
+    </form>
+
+    <form action="/allNew" method="get">
+        <button type="submit" class="button_2">New</button>
     </form>
 
 </div>
